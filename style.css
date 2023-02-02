@@ -4,9 +4,14 @@
     box-sizing: border-box;
 }
 
+html {
+    width: 100%;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     color: hsl(236, 13%, 42%);
+    overflow-x: hidden;
 }
 
 header {
@@ -17,7 +22,7 @@ header {
 }
 
 main {
-    padding-bottom: 5rem;
+    padding: 0 1.5rem 5rem 1.5rem;
 }
 
 .navbar {
@@ -26,6 +31,10 @@ main {
 
 nav {
     width: 100%;
+}
+
+.logo {
+    cursor: pointer;
 }
 
 ul {
@@ -42,7 +51,7 @@ ul li:hover {
 
 ul.active {
     display: block;
-    position: fixed;
+    position: absolute;
     font-weight: 500;
     top: 0;
     right: 0;
@@ -102,8 +111,9 @@ picture {
 }
 
 h1 {
-    color: black;
+    color: hsl(240, 100%, 5%);
     font-weight: 900;
+    font-size: 2.5rem;
 }
 
 h1,
@@ -115,8 +125,9 @@ p {
     line-height: 1.7;
 }
 
-.left {
-    padding: 0 1rem;
+h3:hover {
+    cursor: pointer;
+    color: hsl(35, 77%, 62%);
 }
 
 button {
@@ -129,10 +140,14 @@ button {
     font-weight: 700;
 }
 
+button:hover {
+    background-color: hsl(240, 100%, 5%);
+    cursor: pointer;
+}
+
 .right {
     background-color: hsl(240, 100%, 5%);
     color: #ffff;
-    margin: 0 1rem;
     padding: 2rem 1rem;
 }
 
@@ -163,47 +178,48 @@ h3 {
 
 .top {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-template-rows: 1fr;
+    /* grid-template-columns: repeat(3, 1fr); */
+    grid-template-columns: 2fr 1fr;
+    margin-bottom: 4rem;
 }
 
-.top,
-.bottom {
-    padding: 0 5rem;
-}
 
 .row2 {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .bottom {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     padding-top: 4rem;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .card {
     display: flex;
     gap: 2rem;
-    align-items: end;;
+    align-items: top;
 }
 
 .bottom h2 {
     color: hsl(233, 8%, 79%);
-    font-size: 2rem;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
 }
 
 .bottom img {
-    height: 13rem;
-    width: 100%;
     object-fit: cover;
 }
 
 h4 {
     color: hsl(240, 100%, 5%);
     font-weight: 900;
+}
+
+h4:hover {
+    color: hsl(5, 85%, 63%);
+    cursor: pointer;
 }
 
 @media screen and (max-width:969px) {
@@ -227,5 +243,47 @@ h4 {
 
     header {
         padding: 2rem 1.5rem;
+    }
+
+    .top {
+        grid-template-columns: 1fr
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .left {
+        padding: 0;
+        /* grid-column: 1 / span 2; */
+    }
+
+    .right {
+        margin: 0;
+    }
+
+    .row2 {
+        padding-top: 1rem;
+    }
+
+    button {
+        margin-bottom: 1rem;
+    }
+}
+
+@media screen and (min-width: 600px) {
+
+    .top,
+    .bottom {
+        padding: 0 5rem;
+    }
+
+    .top {
+        gap: 2rem;
+    }
+}
+
+
+@media screen and (min-width: 512px) {
+    h1 {
+        padding-right: 3rem;
     }
 }
