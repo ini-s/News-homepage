@@ -22,7 +22,7 @@ header {
 }
 
 main {
-    padding: 0 1.5rem 5rem 1.5rem;
+    padding: 0 2rem 5rem 2rem;
 }
 
 .navbar {
@@ -178,7 +178,6 @@ h3 {
 
 .top {
     display: grid;
-    /* grid-template-columns: repeat(3, 1fr); */
     grid-template-columns: 2fr 1fr;
     margin-bottom: 4rem;
 }
@@ -190,16 +189,16 @@ h3 {
 }
 
 .bottom {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    padding-top: 4rem;
+    display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
+    justify-content: space-between;
 }
 
 .card {
     display: flex;
     gap: 2rem;
-    align-items: top;
+    flex-basis: 250px;
 }
 
 .bottom h2 {
@@ -209,7 +208,14 @@ h3 {
 }
 
 .bottom img {
+    height: 10rem;
+    width: 8rem;
     object-fit: cover;
+}
+
+.bottom .text {
+    height: 10rem;
+    width: 14rem;
 }
 
 h4 {
@@ -225,6 +231,10 @@ h4:hover {
 @media screen and (max-width:969px) {
     .navbar {
         width: 60%;
+    }
+
+    .top {
+        grid-template-columns: 1fr
     }
 }
 
@@ -245,15 +255,21 @@ h4:hover {
         padding: 2rem 1.5rem;
     }
 
-    .top {
-        grid-template-columns: 1fr
-    }
 }
 
 @media screen and (min-width: 769px) {
+
+    .top,
+    .bottom {
+        padding: 0 5rem;
+    }
+
+    .card {
+        padding-bottom: 1rem;
+    }
+
     .left {
         padding: 0;
-        /* grid-column: 1 / span 2; */
     }
 
     .right {
@@ -270,17 +286,11 @@ h4:hover {
 }
 
 @media screen and (min-width: 600px) {
-
-    .top,
-    .bottom {
-        padding: 0 5rem;
-    }
-
     .top {
         gap: 2rem;
     }
-}
 
+}
 
 @media screen and (min-width: 512px) {
     h1 {
